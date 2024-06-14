@@ -14,5 +14,6 @@ public static void main(String[] args) {
 	System.out.println(lnk);
    System.out.println("Removed First Value = "+lnk.remove(0)+" ✅");
    System.out.println("Removed Last Value = "+lnk.remove(lnk.size()-1)+" ✅");
+   
 }
 }
