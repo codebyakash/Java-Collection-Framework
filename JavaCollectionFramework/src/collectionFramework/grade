@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class gradesystem {
+	static int grade[] = new int[100];
+	static String name[] = new String[100];
+	public static float CalculateAverage(int range) {
+		float total=0f;
+		for(int i=0;i<range;i++)
+			total=total+grade[i];
+		return total/range;
+	}
+	public static void PrintAboveAverage(float avg,int range) {
+		for(int i=0;i<range;i++)
+			if(grade[i]>avg) {
+				System.out.println(name[i]);
+			}
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter Number of Students : ");
+		int range = sc.nextInt();
+		for(int i=0;i<range;i++) {
+			System.out.print("Enter The Name Of Student "+(i+1)+" : ");
+			name[i]=sc.next();
+			System.out.print("Enter The Grade Of Student "+(i+1)+" : ");
+			grade[i]=sc.nextInt();
+		}
+		float avg = CalculateAverage(range);
+		System.out.println("The Average Grade Of Student is : "+avg);
+		PrintAboveAverage(avg,range);
+	}
+}
